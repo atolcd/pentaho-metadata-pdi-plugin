@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<action-sequence> 
+  <title>mqlQuery</title>
+  <version>1</version>
+  <logging-level>ERROR</logging-level>
+  <documentation> 
+    <author/>  
+    <description>MQL Query Container</description>  
+    <help/>  
+    <result-type/>  
+    <icon/> 
+  </documentation>
+
+  <inputs> 
+    <selections type="string"> 
+      <sources> 
+        <request>selections</request> 
+      </sources>  
+      <default-value/> 
+    </selections>  
+    <conditions type="string"> 
+      <sources> 
+        <request>conditions</request> 
+      </sources>  
+      <default-value/> 
+    </conditions>  
+    <orders type="string"> 
+      <sources> 
+        <request>orders</request> 
+      </sources>  
+      <default-value/> 
+    </orders>  
+    <model type="string"> 
+      <sources> 
+        <request>model</request> 
+      </sources>  
+      <default-value><![CDATA[BV_ORDERS]]></default-value> 
+    </model>  
+    <domain type="string"> 
+      <sources> 
+        <request>domain</request> 
+      </sources>  
+      <default-value><![CDATA[steel-wheels]]></default-value> 
+    </domain>  
+    <disable_distinct type="string"> 
+      <sources> 
+        <request>disable_distinct</request> 
+      </sources>  
+      <default-value><![CDATA[true]]></default-value> 
+    </disable_distinct> 
+  </inputs>
+
+  <outputs> 
+    <query_result type="result-set"/> 
+  </outputs>
+
+  <resources/>
+  
+  <actions> 
+    <action-definition> 
+      <component-name>MQLRelationalDataComponent</component-name>
+      <action-type>MQL</action-type>
+      <action-inputs> 
+        <model type="string"/>  
+        <domain type="string"/>  
+        <selections type="string"/>  
+        <disable_distinct type="string"/>  
+        <conditions type="string"/>
+      </action-inputs>
+      <action-outputs> 
+        <query-result type="result-set" mapping="query_result"/> 
+      </action-outputs>
+      <component-definition> 
+        <query><![CDATA[<mql>
+  <domain_type>relational</domain_type>
+  <domain_id>{domain}</domain_id>
+  <model_id>{model}</model_id>
+  <options>
+    <disable_distinct>{disable_distinct}</disable_distinct>
+  </options>
+  <selections>
+	{selections}
+  </selections>
+  <constraints>
+	{conditions}
+  </constraints>
+  <orders>
+  </orders>
+</mql>]]></query> 
+      </component-definition> 
+    </action-definition>
+ 
+  </actions> 
+</action-sequence>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+
+   id="MetadataPlugin"
+   iconfile="icon.png"
+   description="Pentaho Metadata Input"
+   tooltip="Pentaho Metadata Input"
+   category="Input"
+   classname="com.atolcd.pdi.plugin.pentahometadata.MetadataInputStepMeta">
+   
+	<libraries>
+    	<library name="metadatastep.jar"/>
+	</libraries>	
+	
+	<localized_category>
+    	<category locale="en_US">Input</category>
+    	<category locale="fr_FR">Extraction</category>
+	</localized_category>
+	<localized_description>
+    	<description locale="en_US">Pentaho Metadata Input</description>
+     	<description locale="fr_FR">Extraction depuis Pentaho Metadata</description>
+	</localized_description>
+	<localized_tooltip>
+    	<tooltip locale="en_US">Pentaho Metadata Input</tooltip>
+     	<tooltip locale="fr_FR">Extraction depuis Pentaho Metadata</tooltip>
+   	</localized_tooltip>
+			
+</plugin>
